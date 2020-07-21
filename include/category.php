@@ -9,7 +9,7 @@
               <form action="" method="post">
                   <input type="hidden" name="category" value="<?php echo $name_category = $row2["id"];?>">
                   <button type="submit" class="categoryButton">
-                  <img src="/IPassignment2/<?php echo $icon = $row2["icon"];?>" alt="..." class="CategoryIcon"><?php echo $name_category = $row2["name"];?>
+                  <img src="/IPassignment3/<?php echo $icon = $row2["icon"];?>" alt="..." class="CategoryIcon"><?php echo $name_category = $row2["name"];?>
                   </button>
               </form>
               </li>

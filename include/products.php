@@ -1,12 +1,13 @@
 <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "shop";
-  // $servername = "db4free.net";
-  // $username = "hongly123";
-  // $password = "hongly123";
-  // $dbname = "hongly_shop";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "shop";
+//Conection database online
+// $servername = "db4free.net";
+// $username = "hongly123";
+// $password = "hongly123";
+// $dbname = "hongly_shop";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -15,9 +16,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
-
-    // Product
+  // Product
   $sql_product = "select * from products natural join assets";
   $product = $conn->query($sql_product);
   //Feature
@@ -47,7 +46,7 @@ if ($conn->connect_error) {
            while($row3 = $product->fetch_assoc()) { ?>
   
               <div class="col-md-4 each_product" >
-                <form action="/IPassignment2/product_detail.php" method="POST">
+                <form action="/IPassignment3/product_detail.php" method="POST">
                   <button class="btn btn-light btn_pro"type="submit" name="id" value="<?php echo $id = $row3["id"]; ?>">
                     <div class="card"> 
                       <img class="card-img-top product" src="<?php echo $row3["resource_path"]; ?>" alt="...">
@@ -57,7 +56,7 @@ if ($conn->connect_error) {
                         <p>Original Price : <del style="color: red;"><?php echo $price = $row3["price"]; ?>$</del></p>
                         <?php $after_discount = ((100-$discount) * $price)/100;?>
                         <p>After Discount : <span class="text-success"><?php echo $after_discount; ?>$</span></p>
-                        <a href="" class="btn btn-success addCard">Cart</a>
+                        <a href="signin.php" class="btn btn-success addCard">Cart</a>
                       </div>
                     </div>
                   </button>
